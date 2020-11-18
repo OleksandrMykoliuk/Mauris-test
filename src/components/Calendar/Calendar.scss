@@ -1,0 +1,50 @@
+.Calendar {
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    background-color: #f1f1f1;
+  }
+  
+  &__button {
+    display: block;
+    font-size: 24px;
+    border: none;
+    outline: none;
+    background-color: #f1f1f1;
+  }
+  
+  &__button {
+    display: block;
+  }
+
+  &__table {
+    width: 100%;
+    height: 40vh;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid black;
+    margin: auto;
+  }
+
+  &__th {
+    vertical-align: middle;
+    text-align: center;
+    height: 36px;
+  }
+
+  &__day {
+    padding: 4px 8px;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid rgb(215, 215, 215);
+
+    &:hover {
+      background-color: #eaeaea;
+      cursor: pointer;
+    }
+  }
+}

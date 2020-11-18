@@ -1,0 +1,16 @@
+.MoviesList {
+  overflow: scroll;
+  padding-top: 15px;
+
+  &__date {
+    line-height: 40px;
+    font-weight: 600;
+  }
+
+  &__loader {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+}

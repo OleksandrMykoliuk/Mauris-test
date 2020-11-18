@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './App.scss';
+import { Calendar } from './components/Calendar/Calendar';
+import { MoviesList } from './components/MoviesList/MoviesList';
 
-function App() {
+const App = () => {
+  const [date, setDate] = useState(null);
+
+  const handleDateChange = newDate => setDate(newDate);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+      <div className="App__header">
+        {date && (
+          <button
+            type="button"
+            onClick={() => handleDateChange(null)}
+            className="App__button"
+          >
+            {'<'}
+          </button>
+        )}
+        <p className="App__title">
+          SUPER FILM
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </div>
+      {!date && (
+        <>
+          <div className="App__description">
+            <img
+              src="tv.png"
+              alt="background tv"
+              className="App__image"
+            />
+          </div>
+          <p className="App__text">
+            Для получения списка сериалов, пожалуйста,
+            выберите необходимый месяц и день.
+          </p>
+          <Calendar
+            onChange={handleDateChange}
+          />
+        </>
+      )}
+      {date && (
+        <MoviesList
+          date={date}
+        />
+      )}
     </div>
   );
-}
+};
 
 export default App;
